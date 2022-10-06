@@ -17,12 +17,12 @@ function handler(req, res) {
     const feedbackText = req.body.text;
 
     const newFeedback = {
-      id: new Date().toISOString(), // dummy id
+      id: new Date().toISOString(),
       email: email,
       text: feedbackText,
     };
 
-    // store that in a db or file... (in this case: ../../data/feedback.json)
+    // store that in a database or in a file
     const filePath = buildFeedbackPath();
     const data = extractFeedback(filePath);
     data.push(newFeedback);
